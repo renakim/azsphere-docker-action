@@ -1,10 +1,9 @@
-name: Build and Test GitHub actions
-on: push
+on: [push]
 
 jobs:
   build_and_test:
-    name: Build and test the GitHub Action
     runs-on: ubuntu-latest
+    name: Build and test the GitHub Action
 
     steps:
     - name: Checkout the repository
