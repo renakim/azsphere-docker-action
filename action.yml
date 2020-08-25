@@ -1,0 +1,7 @@
+# action.yml
+name: "Azure Sphere Build"
+description: "Azure Sphere sample application build"
+
+runs:
+  using: "docker"
+  image: "Dockerfile"
