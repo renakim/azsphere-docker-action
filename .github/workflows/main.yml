@@ -12,13 +12,11 @@ jobs:
     - name: Run the private action
       uses: ./
 
-    - name: Add path
-      run: |
-        ls -al $RUNNER_WORKSPACE
-        ls -al $GITHUB_WORKSPACE
+    - name: Check output
+      run: ls -al $GITHUB_WORKSPACE
         
     - name: Upload artifact
       uses: actions/upload-artifact@v2
       with:
         name: azsphere-imagepackage
-        path: /build/HLApp_AzureIoT_WIZASG200.imagepackage
+        path: $GITHUB_WORKSPACE/HLApp_AzureIoT_WIZASG200.imagepackage

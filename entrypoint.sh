@@ -3,4 +3,3 @@
 time=$(date)
 echo "$time"
 
-ls /build
