@@ -1,3 +1,9 @@
 #!/bin/sh -l
 
-echo "Hello Azsphere"
+time=$(date)
+echo "$time"
+
+docker cp asg200_hlapp:/build .
+
+cd /build
+

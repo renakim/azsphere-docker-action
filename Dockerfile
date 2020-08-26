@@ -15,3 +15,8 @@ CMD cmake -G "Ninja" \
 -DCMAKE_BUILD_TYPE="Debug" \
 /ASG200_App/Software/${sample} && \
 ninja
+
+ADD entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+ENTRYPOINT [ "/entrypoint.sh" ]

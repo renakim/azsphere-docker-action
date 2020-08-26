@@ -1,7 +1,10 @@
 # action.yml
 name: "Azure Sphere Build"
-description: "Azure Sphere sample application build"
+description: "Azure Sphere application build"
 
 runs:
   using: "docker"
   image: "Dockerfile"
+  args:
+    - "--name=asg200_hlapp"
+
