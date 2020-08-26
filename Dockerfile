@@ -16,7 +16,9 @@ CMD cmake -G "Ninja" \
 /ASG200_App/Software/${sample} && \
 ninja
 
-COPY build /build
+RUN ls -al
+
+COPY /ASG200_App/Software/${sample}/build /build
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
