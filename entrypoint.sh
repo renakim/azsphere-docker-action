@@ -3,7 +3,4 @@
 time=$(date)
 echo "$time"
 
-docker cp asg200_hlapp:/build .
-
-cd /build
-
+ls /build

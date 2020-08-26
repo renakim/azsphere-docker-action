@@ -1,8 +1,8 @@
-FROM mcr.microsoft.com/azurespheresdk AS azsphere-samples-repo
+FROM mcr.microsoft.com/azurespheresdk AS azsphere-app-repo
 
 RUN git clone https://github.com/WIZnet-Azure-Sphere/ASG200_App -b sdk-20.07
 
-FROM azsphere-samples-repo AS asg200-app-build
+FROM azsphere-app-repo AS asg200-app-build
 
 RUN mkdir /build
 WORKDIR /build
@@ -16,7 +16,6 @@ CMD cmake -G "Ninja" \
 /ASG200_App/Software/${sample} && \
 ninja
 
-ADD entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
+COPY entrypoint.sh /entrypoint.sh
 
 ENTRYPOINT [ "/entrypoint.sh" ]
