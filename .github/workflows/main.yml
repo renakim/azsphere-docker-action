@@ -12,6 +12,11 @@ jobs:
     - name: Run the private action
       uses: ./
 
+    - name: Add path
+      run: |
+        cp $RUNNER_WORKSPACE/ASG200_App/Software/WIZASG200_HLApp_AzureIoT/build $GITHUB_WORKSPACE/build
+        echo "::add-path::$GITHUB_WORKSPACE/build"
+
     - name: Upload artifact
       uses: actions/upload-artifact@v2
       with:

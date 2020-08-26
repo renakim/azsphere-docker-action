@@ -7,4 +7,3 @@ runs:
   image: "Dockerfile"
   args:
     - "--name=asg200_hlapp"
-
