@@ -13,7 +13,9 @@ jobs:
       uses: ./
 
     - name: Check output
-      run: ls -al $GITHUB_WORKSPACE
+      run: |
+        ls -al $GITHUB_WORKSPACE
+        echo "::add-path::$GITHUB_WORKSPACE"
         
     - name: Upload artifact
       uses: actions/upload-artifact@v2
