@@ -15,10 +15,10 @@ jobs:
     - name: Check output
       run: |
         ls -al $GITHUB_WORKSPACE
-        echo "::add-path::$GITHUB_WORKSPACE"
+        cp $GITHUB_WORKSPACE/HLApp_AzureIoT_WIZASG200.imagepackage .
         
     - name: Upload artifact
       uses: actions/upload-artifact@v2
       with:
         name: azsphere-imagepackage
-        path: $GITHUB_WORKSPACE/HLApp_AzureIoT_WIZASG200.imagepackage
+        path: HLApp_AzureIoT_WIZASG200.imagepackage
